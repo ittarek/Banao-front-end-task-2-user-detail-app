@@ -1,0 +1,15 @@
+
+import './App.css'
+import UserData from './Components/HomePage/UserData'
+
+function App() {
+
+
+  return (
+    <>
+     <UserData/>
+    </>
+  )
+}
+
+export default App
