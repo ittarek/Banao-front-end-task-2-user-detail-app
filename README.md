@@ -1,5 +1,5 @@
 - This is a User data fetching app 
 - If you click any user then right side will show user details data like(image, name, Bio, email etc)
--in this app using thcnology react-vite , bootstrap 5, MUI, axios, react loader, Aos animation etc
+- in this app using thcnology react-vite , bootstrap 5, MUI, axios, react loader, Aos animation etc
 - my website live link = https://symphonious-strudel-f5ce1a.netlify.app/
 - if you want use this app on your localside just clone this repo and then write `npm i` thats it.

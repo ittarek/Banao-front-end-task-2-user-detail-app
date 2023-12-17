@@ -1,4 +1,3 @@
-
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -16,13 +15,11 @@ const UserData = () => {
   const [usersData, setUserData] = useState();
   const [showDetails, setShowDetails] = useState();
 
-
-
-useEffect(() => {
-      const api = "https://602e7c2c4410730017c50b9d.mockapi.io/users";
+  useEffect(() => {
+    const api = "https://602e7c2c4410730017c50b9d.mockapi.io/users";
     const fetchData = async () => {
       try {
-        const response = await axios.get(api); 
+        const response = await axios.get(api);
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -40,26 +37,26 @@ useEffect(() => {
   return (
     <main>
       {loading ? (
-       <Spinner/>
+        <Spinner />
       ) : (
-        <div className="d-flex  mx-auto">
+        <div className="d-flex  mx-auto user-container">
           <List sx={{ width: "100%", maxWidth: 460 }} className="list-items">
             <h2 className="user-list text-center">User List</h2>
             {usersData?.map((data, index) => (
               <ListItem
                 key={data?.id ? data?.id : index}
                 alignItems="flex-start"
-                className="my-5 user-common-style"
+                className="my-5 user-common-style user-items"
                 data-aos="fade-right"
               >
                 {data ? (
                   <Button
                     onClick={() => handleDetails(data)}
-                    className="w-100"
+                    className="w-100  "
                     data-os="fade-right"
                   >
                     {data?.avatar ? (
-                      <ListItemAvatar>
+                      <ListItemAvatar className="avatar">
                         <Avatar
                           src={
                             data?.avatar ? data?.avatar : "../../assets/man.png"
@@ -79,7 +76,7 @@ useEffect(() => {
                       {/* man is here */}
 
                       {data?.profile?.firstName ? (
-                        <p className="text-start my-auto">
+                        <p className="text-start my-auto user-name">
                           {data.profile.firstName
                             ? data?.profile?.firstName
                             : "No data "}{" "}
@@ -107,7 +104,7 @@ useEffect(() => {
             <h2 className="user-details-heading text-center mx-auto">
               USER DETAILS
             </h2>
-            <div style={{ width: "18rem" }} className="">
+            <div style={{ width: "18rem" }} className="data-details">
               {showDetails?.avatar ? (
                 <Avatar
                   className="mx-auto"

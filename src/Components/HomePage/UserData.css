@@ -42,4 +42,33 @@
     background: #DBDBDB;
 }
 
-.fullName {}
+@media screen and (max-width : 576px) {
+    .details-card{
+        top: 0;
+        width: 60% !important;
+   margin-right: 10px !important;
+
+ 
+    }
+    .user-items{
+     
+        width: 100% !important;
+    }
+    .avatar{
+  margin-left: -20px;
+    }
+    .user-name{
+        font-size: 10px !important;
+    margin-left: -15px;
+    
+    }
+    .list-items{
+     margin-left: 5px !important;
+        /* width: 50px !important; */
+    }
+    .data-details{
+        width: 100% !important;
+    }
+
+    
+}
