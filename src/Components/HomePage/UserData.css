@@ -12,6 +12,16 @@
     background: #C5DFFF;
 
 }
+.user-items:hover{
+    background: #e5c0c0 !important;
+    transition-delay: 3s;
+}
+.btn-active-style:active{
+    background: #000 !important;
+}
+.btn-active-style:focus {
+    background: rgb(151, 147, 147);
+}
 
 .details-card {
     right: -0px !important;
@@ -60,7 +70,7 @@
     .user-name{
         font-size: 10px !important;
     margin-left: -15px;
-    
+
     }
     .list-items{
      margin-left: 5px !important;

@@ -52,7 +52,7 @@ const UserData = () => {
                 {data ? (
                   <Button
                     onClick={() => handleDetails(data)}
-                    className="w-100  "
+                    className="w-100   btn-active-style"
                     data-os="fade-right"
                   >
                     {data?.avatar ? (
