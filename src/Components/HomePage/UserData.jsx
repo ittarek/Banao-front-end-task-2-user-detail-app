@@ -7,9 +7,10 @@ import { Button, Skeleton } from "@mui/material";
 import Card from "react-bootstrap/Card";
 import "./UserData.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Spinner from "../Spinner";
-
+import fallbackImage from "../../assets/man.png"
+import ReactImageFallback from "react-image-fallback";
 const UserData = () => {
   const [loading, setLoading] = useState(true);
   const [usersData, setUserData] = useState();
@@ -20,9 +21,11 @@ const UserData = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(api);
+        console.log(response.data);
+        
         setUserData(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        alert("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
@@ -34,6 +37,21 @@ const UserData = () => {
   const handleDetails = data => {
     setShowDetails(data);
   };
+
+
+
+  const handleImageLoad = e => {
+    console.log(`sucess ${e.currentTarget.src} loaded.`);
+    if (e.currentTarget.className !== "error") {
+      e.currentTarget.className = "success";
+    }
+  };
+  const handleImageError = e => {
+    e.currentTarget.src = fallbackImage || "NO DATA FOUND";
+    e.currentTarget.className = "error";
+  };
+
+
   return (
     <main>
       {loading ? (
@@ -44,9 +62,9 @@ const UserData = () => {
             <h2 className="user-list text-center">User List</h2>
             {usersData?.map((data, index) => (
               <ListItem
-                key={data?.id ? data?.id : index}
+                key={data.createdAt}
                 alignItems="flex-start"
-                className="my-5 user-common-style user-items"
+                className="my-5 user-common-style user-items "
                 data-aos="fade-right"
               >
                 {data ? (
@@ -56,14 +74,13 @@ const UserData = () => {
                     data-os="fade-right"
                   >
                     {data?.avatar ? (
-                      <ListItemAvatar className="avatar">
-                        <Avatar
-                          src={
-                            data?.avatar ? data?.avatar : "../../assets/man.png"
-                          }
-                          alt="image"
-                        ></Avatar>
-                      </ListItemAvatar>
+                      <ReactImageFallback
+                        src={data.avatar}
+                        fallbackImage={data.avatar}
+                        initialImage={fallbackImage}
+                        alt="avatar"
+                        className="avatar"
+                      />
                     ) : (
                       <Skeleton
                         variant="circular"
@@ -71,12 +88,12 @@ const UserData = () => {
                         height={40}
                         className="mx-auto"
                       />
-                    )}
+                    )}{" "}
                     <ListItemText>
                       {/* man is here */}
 
                       {data?.profile?.firstName ? (
-                        <p className="text-start my-auto user-name">
+                        <p className=" my-auto user-name">
                           {data.profile.firstName
                             ? data?.profile?.firstName
                             : "No data "}{" "}
@@ -104,18 +121,17 @@ const UserData = () => {
             <h2 className="user-details-heading text-center mx-auto">
               USER DETAILS
             </h2>
-            <div style={{ width: "18rem" }} className="data-details">
+            <div style={{ width: "30rem" }} className="data-details">
               {showDetails?.avatar ? (
-                <Avatar
-                  className="mx-auto"
-                  sx={{ width: "50px" }}
-                  src={
-                    showDetails.avatar
-                      ? showDetails.avatar
-                      : "../../assets/man.png"
-                  }
-                  alt="Image"
-                ></Avatar>
+                <Avatar sx={{ mx: "auto",width:"100px" , height:"100px" }}>
+                  <ReactImageFallback
+                    src={showDetails.avatar}
+                    fallbackImage={showDetails.avatar}
+                    initialImage={fallbackImage}
+                    alt="avatar"
+                    className="details-avatar"
+                  />
+                </Avatar>
               ) : (
                 <Skeleton
                   variant="circular"

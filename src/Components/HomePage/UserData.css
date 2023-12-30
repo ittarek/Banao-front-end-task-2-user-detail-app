@@ -4,21 +4,30 @@
 
     background: #DBDBDB;
 }
-.list-items{
+
+.list-items {
     margin-left: 100px !important;
 }
+
 .user-list {
     border-radius: 8px 8px 0px 0px;
     background: #C5DFFF;
 
 }
-.user-items:hover{
+ .avatar {
+     width: 50px !important;
+border-radius: 100px;
+
+ }
+.user-items:hover {
     background: #e5c0c0 !important;
     transition-delay: 3s;
 }
-.btn-active-style:active{
+
+.btn-active-style:active {
     background: #000 !important;
 }
+
 .btn-active-style:focus {
     background: rgb(151, 147, 147);
 }
@@ -33,6 +42,9 @@
     border-radius: 8px 8px 0px 0px;
     background: #C5DFFF;
 
+}
+.user-name{
+    margin-left: -150px;
 }
 
 .bio {
@@ -52,33 +64,54 @@
     background: #DBDBDB;
 }
 
+.details-avatar {
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+}
 @media screen and (max-width : 576px) {
-    .details-card{
+    .details-card {
         top: 0;
-        width: 60% !important;
-   margin-right: 10px !important;
+        width: 65% !important;
+        
+        margin-right: 10px !important;
 
- 
+
     }
-    .user-items{
-     
+
+    .user-items {
+
         width: 100% !important;
     }
-    .avatar{
-  margin-left: -20px;
+
+    .avatar {
+        margin-left: -20px;
+        width: 25px !important;
+        margin-right: 10px;
+        
     }
-    .user-name{
+
+    .user-name {
         font-size: 10px !important;
-    margin-left: -15px;
+    margin-left: 0px;
 
     }
-    .list-items{
-     margin-left: 5px !important;
+
+    .list-items {
+        margin-top: -18px !important;
+        margin-left: 5px !important;
         /* width: 50px !important; */
     }
-    .data-details{
+
+    .data-details {
         width: 100% !important;
     }
 
-    
+/* for spinner */
+ .spinner-style {
+     width: 100%;
+  
+     margin-left: 100%;
+
+ }
 }
