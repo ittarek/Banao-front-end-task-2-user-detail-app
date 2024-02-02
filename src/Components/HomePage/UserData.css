@@ -1,7 +1,10 @@
+.user-container{
+    display: flex;
+}
 .user-common-style {
     border-radius: 4px;
     /* border: 1px solid #6C6C6C; */
-
+margin: 20px 0px;
     background: #DBDBDB;
 }
 
@@ -15,7 +18,7 @@
 
 }
  .avatar {
-     width: 50px !important;
+     width: 80px;
 border-radius: 100px;
 
  }
@@ -33,18 +36,28 @@ border-radius: 100px;
 }
 
 .details-card {
+    position: fixed;
     right: -0px !important;
     margin-right: 150px;
     margin-top: 10px;
 }
 
 .user-details-heading {
+    margin: 0px auto;
+    text-align: center;
     border-radius: 8px 8px 0px 0px;
     background: #C5DFFF;
 
 }
+.details-image{
+    margin: 10px 40%;
+        width: 80px;
+            border-radius: 100px;
+}
 .user-name{
-    margin-left: -150px;
+    margin-left: 50px;
+    color: black;
+    text-align: left;
 }
 
 .bio {
@@ -60,7 +73,7 @@ border-radius: 100px;
 .common-style {
     border-radius: 4px;
     border: 1px solid #6C6C6C;
-
+padding-left: 10px ;
     background: #DBDBDB;
 }
 
@@ -115,3 +128,4 @@ border-radius: 100px;
 
  }
 }
+
