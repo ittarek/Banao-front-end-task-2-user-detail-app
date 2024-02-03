@@ -85,7 +85,7 @@ const UserData = () => {
                               ? data?.profile?.lastName
                               : "No data to show"}
                           </p>
-                          <p>{data.jobTitle}</p>
+                          <p className="job-title">{data.jobTitle}</p>
                         </div>
                       ) : (
                         <Skeleton variant="text" sx={{ fontSize: "1rem" }} />

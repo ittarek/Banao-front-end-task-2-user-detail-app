@@ -106,7 +106,9 @@ padding-left: 10px ;
 
 
     }
-
+.job-title{
+    font-size: 6px;
+}
     .user-items {
 
         width: 100% !important;
