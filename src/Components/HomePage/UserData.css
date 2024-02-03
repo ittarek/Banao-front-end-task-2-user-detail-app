@@ -1,5 +1,8 @@
 .user-container{
     display: flex;
+    justify-content: space-between;
+;
+
 }
 .user-common-style {
     border-radius: 4px;
@@ -9,7 +12,7 @@ margin: 20px 0px;
 }
 
 .list-items {
-    margin-left: 100px !important;
+    /* margin-left: 100px ; */
 }
 
 .user-list {
@@ -21,6 +24,9 @@ margin: 20px 0px;
      width: 80px;
 border-radius: 100px;
 
+ }
+ .avatar-skeleton{
+    margin: 10px auto;
  }
 .user-items:hover {
     background: #e5c0c0 !important;
@@ -37,9 +43,9 @@ border-radius: 100px;
 
 .details-card {
     position: fixed;
-    right: -0px !important;
-    margin-right: 150px;
-    margin-top: 10px;
+    right: 0;
+    width: 40% !important;
+    margin-top: 28px;
 }
 
 .user-details-heading {
@@ -47,6 +53,7 @@ border-radius: 100px;
     text-align: center;
     border-radius: 8px 8px 0px 0px;
     background: #C5DFFF;
+    
 
 }
 .details-image{
@@ -82,11 +89,19 @@ padding-left: 10px ;
     height: 100%;
     object-fit: cover;
 }
+
+.spinner-style{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+/* style for mobile */
 @media screen and (max-width : 576px) {
     .details-card {
-        top: 0;
+        /* top: 0; */
         width: 65% !important;
-        
+        margin-top: 28px;
         margin-right: 10px !important;
 
 
@@ -111,8 +126,8 @@ padding-left: 10px ;
     }
 
     .list-items {
-        margin-top: -18px !important;
-        margin-left: 5px !important;
+        /* margin-top: px !important; */
+        margin-left: 0px !important;
         /* width: 50px !important; */
     }
 
@@ -123,9 +138,19 @@ padding-left: 10px ;
 /* for spinner */
  .spinner-style {
      width: 100%;
-  
+ 
      margin-left: 100%;
 
  }
-}
+} 
 
+/* style for tablet */
+@media only screen and (min-width: 600px) {
+    .list-items{
+width: 40% !important;
+    }
+    .details-card{
+        width:55% !important;
+        /* margin-right: -120px; */
+    }
+}

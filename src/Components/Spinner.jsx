@@ -1,15 +1,12 @@
 import { MoonLoader } from "react-spinners";
-import "../Components/HomePage/UserData.css"
+import "../Components/HomePage/UserData.css";
 
 const Spinner = () => {
   return (
-    <div style={{height : "70vh"}}
+    <div
+      style={{ height: "70vh" }}
       className="
-      spinner-style
-     d-flex 
-      flex-column 
-      justify-content-center 
-      align-items-center 
+     spinner-style
     
     "
     >

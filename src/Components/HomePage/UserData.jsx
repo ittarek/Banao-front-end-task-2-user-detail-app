@@ -1,12 +1,10 @@
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { Avatar, Button, List, Skeleton } from "@mui/material";
-import Card from "react-bootstrap/Card";
+import {  Button, List, Skeleton } from "@mui/material";
 import "./UserData.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
-import fallbackImage from "../../assets/man.png";
 import ReactImageFallback from "react-image-fallback";
 
 const UserData = () => {
@@ -105,9 +103,9 @@ const UserData = () => {
             ))}
           </List>
           {/* user details card */}
-          <div className="details-card ">
+          <div className="details-card" >
             <h2 className="user-details-heading ">USER DETAILS</h2>
-            <div style={{ width: "30rem" }} className="data-details">
+            <div className="data-details">
               {showDetails?.avatar ? (
                 <ReactImageFallback
                   className="details-image"
@@ -121,16 +119,16 @@ const UserData = () => {
                   variant="circular"
                   width={40}
                   height={40}
-                  className=""
+                  className="avatar-skeleton"
                 />
               )}
               <section>
                 {showDetails?.profile?.username ? (
-                  <Card.Title className="">
+                  <p className="">
                     {showDetails?.profile?.username
                       ? showDetails?.profile?.username
                       : "No data to show"}
-                  </Card.Title>
+                  </p>
                 ) : (
                   <Skeleton
                     variant="text"
